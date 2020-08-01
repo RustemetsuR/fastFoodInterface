@@ -12,6 +12,47 @@ const App = () => {
   ]);
 
   const [totalPrice, setTotalPrice] = useState(0);
+
+  const addFoodToTheOrders = id => {
+    const index = menu.findIndex(food => food.id === id);
+    let menuCopy = [...menu];
+    let totalPriceCopy = totalPrice;
+
+    menuCopy[index].count++;
+    menuCopy[index].currentPrice = menuCopy[index].price * menuCopy[index].count;
+    totalPriceCopy= totalPriceCopy + menuCopy[index].price;
+
+
+    setMenu(menuCopy);
+    setTotalPrice(totalPriceCopy);
+  }
+
+  const removeOneFood = id =>{
+    const index = menu.findIndex(food => food.id === id);
+    let menuCopy = [...menu];
+    let totalPriceCopy = totalPrice;
+
+    menuCopy[index].count--;
+    menuCopy[index].currentPrice = menuCopy[index].currentPrice - menuCopy[index].price;
+    totalPriceCopy= totalPriceCopy - menuCopy[index].price;
+
+    setMenu(menuCopy);
+    setTotalPrice(totalPriceCopy);
+  }
+
+  const removeAllFoodFromOneKind = id =>{
+    const index = menu.findIndex(food => food.id === id);
+    let menuCopy = [...menu];
+    let totalPriceCopy = totalPrice;
+
+    totalPriceCopy= totalPriceCopy - menuCopy[index].currentPrice;
+
+    menuCopy[index].count = 0;
+    menuCopy[index].currentPrice = menuCopy[index].price;
+
+    setMenu(menuCopy);
+    setTotalPrice(totalPriceCopy);
+  }
   return (
     <div className="App">
      
