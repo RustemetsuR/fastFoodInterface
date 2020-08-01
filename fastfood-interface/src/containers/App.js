@@ -1,24 +1,20 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
-function App() {
+const App = () => {
+  const [menu, setMenu] = useState([
+    { name: 'Hamburger', price: 80, currentPrice: 80, count: 0, id: 'menu-1' },
+    { name: 'Cheeseburger', price: 90, currentPrice: 90,count: 0, id: 'menu-2' },
+    { name: 'Fries', price: 45, currentPrice: 45,count: 0, id: 'menu-3' },
+    { name: 'Coffee', price: 70, currentPrice: 70,count: 0, id: 'menu-4' },
+    { name: 'Tea', price: 50, currentPrice: 50,count: 0, id: 'menu-5' },
+    { name: 'Cola', price: 40, currentPrice: 40,count: 0, id: 'menu-6' },
+  ]);
+
+  const [totalPrice, setTotalPrice] = useState(0);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+     
     </div>
   );
 }
