@@ -1,0 +1,26 @@
+.order{
+    border: 1px solid black;
+    text-align: start;
+    padding: 25px 0;
+    margin-bottom: 25px;
+}
+
+.name-order{
+    margin: 0;
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.price-order{
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.amount-order{
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.btn{
+    margin: 0 5px;
+}

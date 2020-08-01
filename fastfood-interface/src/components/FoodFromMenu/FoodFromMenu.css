@@ -1,0 +1,11 @@
+.food{
+    display: inline-block;
+    width: 45%;
+    height: 100px;
+    border: 1px solid black;
+}
+
+.food:hover{
+    background: black;
+    color: white;
+}
