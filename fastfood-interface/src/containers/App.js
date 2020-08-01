@@ -1,5 +1,9 @@
 import React from 'react';
 import './App.css';
+import AllOrders from '../components/AllOrders/AllOrders';
+import Menu from '../components/Menu/Menu';
+import TotalPrice from '../components/TotalPrice/TotalPrice';
+
 
 const App = () => {
   const [menu, setMenu] = useState([
@@ -55,7 +59,19 @@ const App = () => {
   }
   return (
     <div className="App">
-     
+      <div className="interface">
+        <div className="boxes order-box">
+          <h2>Orders</h2>
+          <div className="orders">
+            <AllOrders orders={menu} remove={removeOneFood} removeAll={removeAllFoodFromOneKind}/>
+          </div>
+          <TotalPrice totalPrice={totalPrice} />
+        </div>
+        <div className="boxes menu-box">
+          <h2>Menu</h2>
+          <Menu add={addFoodToTheOrders} menu={menu} />
+        </div>
+      </div>
     </div>
   );
 }
